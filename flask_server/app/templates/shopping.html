@@ -1,0 +1,10 @@
+<!doctype html>
+<title>Render a list</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="style.css") }}">
+<h1>Shopping list</h1>
+
+<ul>
+    {% for f in food %}
+        <li class="{{ loop.cycle('odd', 'even') }}">{{ f }}</li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,32 @@
+
+
+{% block content %}
+{% macro render_dialog(title, class='dialog') -%}
+    <div class="{{ class }}">
+        <h2>{{ title }}</h2>
+        <div class="contents">
+            content: {{ caller() }}
+        </div>
+    </div>
+{%- endmacro %}
+
+{% call render_dialog('Using Macros') %}
+    This is a simple dialog rendered by using a macro and
+    a call block.
+{% endcall %}
+
+
+<h1>Registration form</h1>
+<h2>You registered this plane:
+
+{% if not plane %}
+    <p>{{ error }}</p>
+{% else %}
+    <span>{{ plane }}</span>
+{% endif %}
+
+</h2>
+<span class=center"><img src="{{ url_for('static', filename='images/anderson.jpg') }}"/></span>
+
+
+{% endblock %}

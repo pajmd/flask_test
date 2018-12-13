@@ -1,0 +1,38 @@
+<link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="style.css") }}">
+
+{% block content %}
+
+<h1>Registration form</h1>
+<h2>Currently registerd planes</h2>
+<ul>
+    <li class="list_header">
+        <span class="field_space">Name</span>
+        <span class="field_space">Plane</span>
+        <span class="field_space">Booked</span>
+    </li>
+    {% for plane in planes %}
+    <li class="{{ loop.cycle('line_clear', 'line_gray') }}">
+        <span class="field_space">{{ plane.name }}</span>
+        <span class="field_space">{{ plane.plane }}</span>
+        <span class="field_space"> {{ plane.when }}</span>
+    </li>
+    {% endfor %}
+</ul>
+
+<h2>Register you plane</h2>
+<form method="post" action="/single_page_register">
+    <div>
+        <h3><span class="field_large">Name</span><input type="text" name="name"/></h3>
+        <h3><span class="field_large">Model Plane</span><input type="text" name="plane"/></h3>
+        <h3><span class="field_large">Timeslot</span>
+            <select name="when">
+                <option>10am</option>
+                <option>12am</option>
+                <option>14am</option>
+                <option>16am</option>
+            </select>
+        </h3>
+    </div>
+    <input type="submit" value="Press me"/>
+</form>
+{% endblock %}
