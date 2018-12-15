@@ -14,6 +14,10 @@ h1 {
 	width: 160px;
 }
 
+//.list_nobullet {
+    list-style-type: none;
+}
+
 .line_clear {
 	background-color: white;
 	width: 240px;
@@ -22,10 +26,20 @@ h1 {
 .line_gray {
 	background-color: lightgray;
 	width: 240px;
+
 }
 
+/* alternate color using css3 */
+// li { background: green; }
+// li:nth-child(odd) { background: lightgray; }
+
+/* http://css.maxdesign.com.au/listutorial/index.htm */
 .list_header {
 	background-color: darkgray;
-	foreground: white;
 	width: 240px;
+}
+
+
+.black_font {
+    color: black;
 }

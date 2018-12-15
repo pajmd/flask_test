@@ -4,11 +4,12 @@
 
 <h1>Registration form</h1>
 <h2>Currently registerd planes</h2>
-<ul>
+<!-- http://css.maxdesign.com.au/listutorial/index.htm -->
+<ul class="list_nobullet">
     <li class="list_header">
-        <span class="field_space">Name</span>
-        <span class="field_space">Plane</span>
-        <span class="field_space">Booked</span>
+        <span class="field_space black_font">Name</span>
+        <span class="field_space black_font">Plane</span>
+        <span class="field_space black_font">Booked</span>
     </li>
     {% for plane in planes %}
     <li class="{{ loop.cycle('line_clear', 'line_gray') }}">
